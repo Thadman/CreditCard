@@ -3,11 +3,12 @@ import { useState } from "react";
 import Form from "./components/Form";
 
 function App() {
-  const [query, setQuery] = useState("Thad");
-  // const [number, setNumber] = useState("");
-  // const [name, setName] = useState("");
-  // const [month, setMonth] = useState("");
-  // const [year, setYear] = useYear("");
+  const [query, setQuery] = useState("Enter Details");
+  const [number, setNumber] = useState("#### #### #### ####");
+  const [name, setName] = useState("John Doe");
+  const [month, setMonth] = useState("");
+  const [year, setYear] = useState("");
+  const [cvv, setCvv] = useState("###");
 
   // have this here, as was just testing passing through props
   const details = {
@@ -46,28 +47,33 @@ function App() {
                 details={details}
                 query={query}
                 handleSubmit={handleSubmit}
+                name={name}
+                number={number}
+                year={year}
+                month={month}
+                cvv={cvv}
               />
               <div style={{ textAlign: "left", paddingLeft: "75px" }}>
-                <label> Card Number</label>
+                <label> Card Number: {number}</label>
               </div>
               <div>
                 <input
                   type="text"
                   placeholder="Type your message here"
-                  value={query}
-                  onChange={(event) => setQuery(event.target.value)}
+                  value={number}
+                  onChange={(event) => setNumber(event.target.value)}
                   style={{ width: "80%", height: "30px", fontSize: "25px" }}
                 />
               </div>
               <div style={{ textAlign: "left", paddingLeft: "75px" }}>
-                <label>Customer Name</label>
+                <label>Customer Name: {name}</label>
               </div>
               <div>
                 <input
                   type="text"
                   placeholder="Type your message here"
-                  // value={query}
-                  onChange={(event) => setQuery(event.target.value)}
+                  value={name}
+                  onChange={(event) => setName(event.target.value)}
                   style={{ width: "80%", height: "30px", fontSize: "25px" }}
                 />
               </div>
@@ -80,28 +86,32 @@ function App() {
               >
                 <div>
                   <label>Month</label>
-                  <select>
+                  <select onChange={(e) => setMonth(e.target.value)}>
                     <option value="0">Month</option>
-                    <option value="1">Jan</option>
-                    <option value="2">Feb</option>
-                    <option value="3">Mar</option>
-                    <option value="4">April</option>
-                    <option value="5">May</option>
+                    <option value="Jan">Jan</option>
+                    <option value="Feb">Feb</option>
+                    <option value="Mar">Mar</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
                   </select>
                 </div>
                 <div>
                   <label>Year</label>
-                  <select>
+                  <select onChange={(e) => setYear(e.target.value)}>
                     <option value="0">Year</option>
-                    <option value="1">2021</option>
-                    <option value="2">2022</option>
-                    <option value="3">2023</option>
-                    <option value="4">2024</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
                   </select>
                 </div>
                 <div>
-                  <label>CVV</label>
-                  <input type="text" />
+                  <label>Cvv</label>
+                  <input
+                    type="text"
+                    value={cvv}
+                    onChange={(e) => setCvv(e.target.value)}
+                  />
                 </div>
               </div>
             </form>
