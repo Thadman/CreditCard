@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import Form from "./components/Form";
+import Button from "./components/Button";
 
 function App() {
   const [query, setQuery] = useState("Enter Details");
@@ -21,6 +22,11 @@ function App() {
   function handleSubmit() {
     console.log("this worked");
     setQuery("Thad");
+    setNumber("#### #### #### ####");
+    setName("John Doe");
+    setYear("");
+    setMonth("");
+    setCvv("###");
   }
 
   // function handleChange() {
@@ -43,16 +49,7 @@ function App() {
                 flexDirection: "column",
               }}
             >
-              <Form
-                details={details}
-                query={query}
-                handleSubmit={handleSubmit}
-                name={name}
-                number={number}
-                year={year}
-                month={month}
-                cvv={cvv}
-              />
+              <Form details={details} query={query} />
               <div style={{ textAlign: "left", paddingLeft: "75px" }}>
                 <label> Card Number: {number}</label>
               </div>
@@ -114,6 +111,14 @@ function App() {
                   />
                 </div>
               </div>
+              <Button
+                handleSubmit={handleSubmit}
+                name={name}
+                number={number}
+                year={year}
+                month={month}
+                cvv={cvv}
+              />
             </form>
           </div>
         </div>
