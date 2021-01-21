@@ -2,6 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import Form from "./components/Form";
 import Button from "./components/Button";
+import Credit from "./components/Credit";
 
 function App() {
   const [query, setQuery] = useState("Enter Details");
@@ -29,15 +30,17 @@ function App() {
     setCvv("###");
   }
 
-  // function handleChange() {
-  //   const { name, value } = e.target;
-  //   setState(([name]: value));
-  // }
-
   return (
     <div className="App">
       <header className="App-header">
         <div className="background">
+          <Credit
+            name={name}
+            month={month}
+            number={number}
+            year={year}
+            cvv={cvv}
+          />
           <div
             className="form"
             style={{ display: "flex", justifyContent: "center" }}

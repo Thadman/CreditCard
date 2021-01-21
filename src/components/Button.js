@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Button(props) {
-  console.log(props);
+  // console.log(props);
   return (
     <div>
       <div>
@@ -22,3 +22,5 @@ export default function Button(props) {
     </div>
   );
 }
+
+// using props to pass state and handleSubmit function, which is in the parent App.js.

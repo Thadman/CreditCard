@@ -9,5 +9,4 @@ export default function form(props) {
   );
 }
 
-// using props to pass state and handleSubmit function, which is in the parent App.js.
 // state is updating with the onChange handler.
