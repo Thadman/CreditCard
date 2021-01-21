@@ -43,7 +43,14 @@ function App() {
           />
           <div
             className="form"
-            style={{ display: "flex", justifyContent: "center" }}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              border: "1px solid black",
+              background: "#fff",
+              height: "80%",
+              width: "80%",
+            }}
           >
             <form
               style={{
